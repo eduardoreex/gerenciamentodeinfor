@@ -1,22 +1,10 @@
 public class Disciplina {
-    int codigo;
+    String codigo;
     String nome;
-    Disciplina(int codigo, String nome) {
-    }
 
-    void adicionarDisciplina() {
-
-    }
-
-    void verificarDisciplina() {
-
-    }
-
-    void removerDisciplina() {
-
-    }
-
-    void obterTodasDisciplinas() {
-
+    Disciplina(String codigo, String nome) {
+        this.codigo =  codigo;
+        this.nome = nome;
     }
 }
+

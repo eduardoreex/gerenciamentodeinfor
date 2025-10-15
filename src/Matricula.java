@@ -1,30 +1,9 @@
 public class Matricula {
-    int codigo;
+    String codigoDisciplina;
     double nota;
-    Matricula (int codigo, double nota ){
-        this.codigo = codigo;
+
+    Matricula(String codigoDisciplina, double nota) {
+        this.codigoDisciplina = codigoDisciplina;
         this.nota = nota;
     }
-    void adicionarMatricula(){
-
-    }
-    void obterMatriculas(){
-
-    }
-    void obterNota(){
-
-    }
-    void removerMatricula(){
-
-    }
-    void mediaDoEstudante(){
-
-    }
-    void MediaDaDisciplina(){
-
-    }
-    void topNEstudantesPormedia(){
-
-    }
-
 }
