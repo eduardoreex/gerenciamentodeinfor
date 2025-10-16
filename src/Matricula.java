@@ -6,4 +6,12 @@ public class Matricula {
         this.codigoDisciplina = codigoDisciplina;
         this.nota = nota;
     }
+
+    public String getCodigoDisciplina() {
+        return codigoDisciplina;
+    }
+
+    public double getNota() {
+        return nota;
+    }
 }
