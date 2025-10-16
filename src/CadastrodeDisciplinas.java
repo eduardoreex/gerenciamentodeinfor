@@ -1,21 +1,21 @@
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
+
 public class CadastrodeDisciplinas {
-    String nome;
-    String codigo;
-    ArrayList<Disciplina> disciplinas;
+
+    private LinkedHashSet <Disciplina> disciplinas;
     CadastrodeDisciplinas (String nome, String codigo){
-        this.codigo = codigo;
-        this.nome = nome;
-        this.disciplinas = new ArrayList<>();
+        this.disciplinas = new LinkedHashSet<>();
     }
     public void adicionarDisciplina(Disciplina disciplina){
-        if(!verificarDisciplina(disciplina.codigo)) {
+        if (disciplina != null){
             this.disciplinas.add(disciplina);
         }
     }
     public boolean verificarDisciplina(String codigo){
         for (Disciplina disciplina1 : this.disciplinas) {
-            if (disciplina1.codigo.toLowerCase().equals(codigo.toLowerCase())) {
+            if (disciplina1.getCodigo().equals(codigo)) {
                 return true;
             }
         }
@@ -23,16 +23,15 @@ public class CadastrodeDisciplinas {
     }
     public void removerDisciplina(String codigo){
         for (Disciplina disciplina1 : this.disciplinas) {
-            if(disciplina1.equals(codigo)) {
+            if(disciplina1.getCodigo().equals(codigo)) {
                 this.disciplinas.remove(disciplina1);
                 break;
               }
             }
 
     }
-    public ArrayList<Disciplina> obterTodasDisciplinas() {
-        return this.disciplinas;
-
+    public List<Disciplina> obterTodasDisciplinas() {
+        return new ArrayList<>(this.disciplinas);
     }
 
 }

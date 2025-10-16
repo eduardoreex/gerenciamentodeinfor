@@ -1,17 +1,15 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class                                                                                                                                                                                                                                                                                                                                                                    ListaDeEstudantes {
-    String nome;
-    int id;
-    ArrayList<Estudante> estudantes;
+public class  ListaDeEstudantes {
+    private ArrayList<Estudante> estudantes;
 
     ListaDeEstudantes(String nome, int id) {
-        this.nome = nome;
         this.estudantes = new ArrayList<>();
     }
 
     public void adicionarEstudantes(Estudante estudante){
+        if (estudante != null)
             this.estudantes.add(estudante);
     }
     public void removerEstudantesPorId(Estudante id){
@@ -32,5 +30,8 @@ public class                                                                    
     }
     public void ordenarEstudanteporNome(){
     this.estudantes.sort((estudante1, estudante2) -> estudante1.nome.compareTo(estudante2.nome));
+    }
+    public List<Estudante> obterTodosEstudantes() {
+        return new ArrayList<>(this.estudantes);
     }
 }
