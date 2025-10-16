@@ -1,0 +1,53 @@
+=== Cadastrando Estudantes ===
+ana adicionado(a)
+Bruno adicionado(a)
+Carla adicionado(a)
+Diego adicionado(a)
+=== Cadastrando Disciplinas ===
+Adicionada: Matemática
+Adicionada: Programação
+Adicionada: Banco de Dados
+Adicionada: Educação Física
+== Cadastrando Matrículas ==
+Matrícula: Ana em Matemática - Nota 8.5
+Matrícula: Bruno em programção - Nota 7.5
+Matrícula: carla em Banco de Dados - Nota 8.0
+Matrícula: Diego em Educação fisica - Nota 8.5
+== Lista de estudantes por ordem de cadastro ==
+1 - ana
+2 - Bruno
+3 - Carla
+4 - Diego
+== Lista de estudantes por ordernada ==
+Bruno
+Carla
+Diego
+ana
+
+== Duplicatas ==
+nenhuma
+== Disciplinas ==
+MAT101 - Matemática
+PRG201 - Programação
+BD301 - Banco de Dados
+EDF110 - Educação Física
+== Matrículas ==
+Bruno: PRG201(7.5) | Média: 7,50
+Carla: BD301(8.0) | Média: 8,00
+Diego: EDF110(8.5) | Média: 8,50
+ana: MAT101(8.5) | Média: 8,50
+== Médias por disciplina
+MAT101:8,5
+PRG201:7,5
+BD301:8,0
+EDF110:8,5
+== Top 3 alunos por média ==
+1) Id: 1 Média: 8,50
+2) Id: 4 Média: 8,50
+3) Id: 3 Média: 8,00
+== Alunos com média >= 8.0 ==
+Carla
+Diego
+ana
+== Disciplina com média < 6.0 ==
+nenhuma

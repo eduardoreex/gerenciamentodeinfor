@@ -24,15 +24,11 @@ public class HistoricoNotas {
         }
     }
 
-    public List<Matricula> obterMatriculas(int idEstudante) {
-        if (historicoCompleto.containsKey(idEstudante)) {
-            return historicoCompleto.get(idEstudante);
-        } else {
-            return new ArrayList<>();
-        }
+    public Optional<List<Matricula>> obterMatriculas(int idEstudante) {
+        return Optional.ofNullable(historicoCompleto.get(idEstudante));
     }
 
-    public Optional<Double> obternotas(int idEstudante, String codigoDisciplina) {
+    public Optional<Double> obterNota(int idEstudante, String codigoDisciplina) {
         ArrayList<Matricula> matriculas = historicoCompleto.get(idEstudante);
         if (matriculas == null) {
             return Optional.empty();
@@ -47,11 +43,11 @@ public class HistoricoNotas {
 
     public void removerMatricula(int idEstudante, String codigoDisciplina) {
         ArrayList<Matricula> matriculas = historicoCompleto.get(idEstudante);
-        if (matriculas == null) {
+        if (matriculas != null) {
             matriculas.removeIf(m -> m.getCodigoDisciplina().equals(codigoDisciplina));
         }
     }
-    public double MediaDaDisciplina(String CodigoDisciplina) {
+    public double mediaDaDisciplina(String CodigoDisciplina) {
         double soma = 0;
         int quantidade = 0;
 
@@ -72,7 +68,7 @@ public class HistoricoNotas {
 
     }
 
-    public double MediaDoestudante(int idEstudante) {
+    public double mediaDoEstudante(int idEstudante) {
         ArrayList<Matricula> matriculas = historicoCompleto.get(idEstudante);
 
         if (matriculas == null || matriculas.isEmpty()) {
@@ -98,21 +94,19 @@ public class HistoricoNotas {
         }
         ArrayList<EstudanteComMedia> estudantesComMedia = new ArrayList<>();
         for (Integer idEstudante : historicoCompleto.keySet()) {
-            double media = MediaDoestudante(idEstudante);
+            double media = mediaDoEstudante(idEstudante);
             estudantesComMedia.add(new EstudanteComMedia(idEstudante, media));
         }
 
-        // Ordena por média decrescente
         Collections.sort(estudantesComMedia, (e1, e2) ->
                 Double.compare(e2.media, e1.media)
         );
 
-        // Monta o resultado
         ArrayList<String> resultado = new ArrayList<>();
         for (int i = 0; i < N && i < estudantesComMedia.size(); i++) {
             EstudanteComMedia est = estudantesComMedia.get(i);
-            String linha = (i + 1) + ") ID: " + est.idEstudante +
-                    " - Média: " + String.format("%.2f", est.media);
+            String linha = (i + 1) + ") Id: " + est.idEstudante +
+                    " Média: " + String.format("%.2f", est.media);
             resultado.add(linha);
         }
         return resultado;

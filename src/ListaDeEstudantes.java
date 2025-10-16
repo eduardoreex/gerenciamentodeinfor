@@ -4,7 +4,7 @@ import java.util.List;
 public class  ListaDeEstudantes {
     private ArrayList<Estudante> estudantes;
 
-    ListaDeEstudantes(String nome, int id) {
+    ListaDeEstudantes() {
         this.estudantes = new ArrayList<>();
     }
 
@@ -12,7 +12,7 @@ public class  ListaDeEstudantes {
         if (estudante != null)
             this.estudantes.add(estudante);
     }
-    public void removerEstudantesPorId(Estudante id){
+    public void removerEstudantesPorId(int id){
         this.estudantes.remove(id);
     }
     public Estudante obterEstudantePorIndice(int indice){
@@ -22,7 +22,7 @@ public class  ListaDeEstudantes {
     public List<Estudante> buscarEstudantesPorNome(String subestring) {
         ArrayList<Estudante> resultado = new ArrayList<>();
         for (Estudante estudante1 : this.estudantes) {
-            if (estudante1.nome.toLowerCase().contains(subestring.toLowerCase())) {
+            if (estudante1.getNome().toLowerCase().contains(subestring.toLowerCase())) {
                 resultado.add(estudante1);
             }
         }
